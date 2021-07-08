@@ -1,6 +1,134 @@
 .leftmenu-links:hover {
   background-color: white;
   color: black;
+  -webkit-box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
+          box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
+}
+
+.leftmenu-links:hover p {
+  color: black;
+}
+
+@-webkit-keyframes menulinkhover {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes menulinkhover {
+  from {
+  }
+  to {
+  }
+}
+
+.arrow-rotate {
+  -webkit-animation: rotatearrow 0.25s linear forwards;
+          animation: rotatearrow 0.25s linear forwards;
+}
+
+@-webkit-keyframes rotatearrow {
+  from {
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@keyframes rotatearrow {
+  from {
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
+
+@-webkit-keyframes leftmenuopen {
+  from {
+    display: block;
+    left: -300px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes leftmenuopen {
+  from {
+    display: block;
+    left: -300px;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes leftmenuclose {
+  from {
+    left: 0;
+  }
+  to {
+    left: -300px;
+    display: none;
+  }
+}
+
+@keyframes leftmenuclose {
+  from {
+    left: 0;
+  }
+  to {
+    left: -300px;
+    display: none;
+  }
+}
+
+@-webkit-keyframes rotateback {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateback {
+  from {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+.arrow-rotate-back {
+  -webkit-animation: rotateback 0.25s linear forwards;
+          animation: rotateback 0.25s linear forwards;
+}
+
+.menuopen {
+  -webkit-animation-name: leftmenuopen;
+          animation-name: leftmenuopen;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.menuclose {
+  -webkit-animation-name: leftmenuclose;
+          animation-name: leftmenuclose;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .leftmenu-links {
@@ -18,5 +146,41 @@
   background-color: #346274;
   padding-left: 50px;
   padding-top: 10px;
+}
+
+.addnewprojectform {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.308);
+  z-index: 850;
+}
+
+.form-hidden {
+  display: none;
+}
+
+.form-shown {
+  display: block;
+}
+
+.add-form {
+  margin: auto;
+  background-color: #f7f7f7;
+  width: 450px;
+  height: 160px;
+}
+
+.active-link {
+  background-color: white;
+  color: black;
+  -webkit-box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
+          box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
+}
+
+.active-link p {
+  color: black;
 }
 /*# sourceMappingURL=styles.css.map */
