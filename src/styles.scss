@@ -1,0 +1,22 @@
+.leftmenu-links:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.leftmenu-links{
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 5px;
+}
+
+.menuContainer {
+    height: 95%;
+    width: 300px;
+    top: 56px;
+    left: 0;
+    position: fixed;
+    background-color: rgb(52, 98, 116);
+    //border-right: 2px solid rgb(184, 184, 184);
+    padding-left: 50px;
+    padding-top: 10px;
+}

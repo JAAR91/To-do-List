@@ -1,0 +1,22 @@
+.leftmenu-links:hover {
+  background-color: white;
+  color: black;
+}
+
+.leftmenu-links {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 5px;
+}
+
+.menuContainer {
+  height: 95%;
+  width: 300px;
+  top: 56px;
+  left: 0;
+  position: fixed;
+  background-color: #346274;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+/*# sourceMappingURL=styles.css.map */
