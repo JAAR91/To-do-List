@@ -3,11 +3,10 @@ import menuButtom from './topnavbar.js';
 import printProjectlist,{
   menuContainer, addProjects, TodosContainer
 } from './leftbar.js';
-import formContainer,{newProjectButton, nameinpuit} from './newprojectform.js';
-import todoToday from './todayTodo.js'
+import formContainer,{newProjectButton, nameinput} from './newprojectform.js';
+import todoToday from './todayTodo.js';
+import newTodoformContainer, {newTodoBtn, titleinput, descriptionInp, dateInp, prioprityInp, notesInp, projecInp, checklistInp} from './createTodo.js';
 import './styles.css';
-
-TodoProjects.load();
 
 menuButtom.onclick = () => {
   if (!menuContainer.classList.contains('menuopen') && !menuContainer.classList.contains('menuclose')) {
@@ -43,14 +42,19 @@ function menuklinkclick(currentbutton) {
 
 addProjects.onclick = () => {
     formContainer.classList.remove('form-hidden');
-    formContainer.classList.remove('text-light');
     formContainer.classList.add('form-shown');
 };
 
 newProjectButton.onclick = () => {
-    TodoProjects.new(nameinpuit.value);
+    TodoProjects.new(nameinput.value);
     TodoProjects.save();
     window.location.reload();
+};
+
+newTodoBtn.onclick = () => {
+  TodoProjects.newTodo(projecInp.value, titleinput.value, 
+    descriptionInp.value, dateInp.value, prioprityInp.value, 
+    notesInp.value, checklistInp.value);
 };
 
 function linkselect(evt) {
@@ -64,4 +68,3 @@ function linkselect(evt) {
 }
 
 menuContainer.addEventListener('click', linkselect);
-

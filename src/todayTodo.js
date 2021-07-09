@@ -1,5 +1,6 @@
 import TodoProjects from './constructors.js';
 import {TodosContainer} from './leftbar.js';
+import {addTodo, addTodobuttom} from './createTodo.js';
 import { format, compareAsc } from 'date-fns'
 
 const todayTodo = document.createElement('div');
@@ -13,12 +14,7 @@ todayTitle.innerHTML = `<h1 class="fs-4 m-0 p-0">Today </h1>
 <p class="text-muted my-0 mx-2"> ${format(new Date(), 'EEE MMM dd')}</p>`;
 todayTodo.appendChild(todayTitle);
 
-export const addTodo = document.createElement('a');
-addTodo.classList.add('text-decoration-none', 'link-info');
-addTodo.textContent = '+ Add Task';
-addTodo.href = '#';
 todayTodo.appendChild(addTodo);
-
 
 function checkTodos(list){
     let count =0;
@@ -39,10 +35,6 @@ if (checkTodos(TodoProjects.list)){
     notodosfound.src = 'https://imgc.artprintimages.com/img/print/nothing-yet-sir-but-we-have-found-elvis-new-yorker-cartoon_u-l-pgqixi0.jpg';
     todayTodo.appendChild(notodosfound);
 
-    const addTodobuttom = document.createElement('buttom');
-    addTodobuttom.classList.add('btn', 'text-center', 'btn-info');
-    addTodobuttom.textContent = '+ Add Task';
-    addTodobuttom.href = '#';
     todayTodo.appendChild(addTodobuttom);
 }
 

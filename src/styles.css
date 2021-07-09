@@ -265,4 +265,9 @@ body {
 .notodosfound {
   width: 400px;
 }
+
+.add-todo-form {
+  width: 350px;
+  background-color: white;
+}
 /*# sourceMappingURL=styles.css.map */

@@ -27,11 +27,11 @@ const inputcontainer = document.createElement('div');
 inputcontainer.classList.add('p-3');
 form.appendChild(inputcontainer);
 
-export const nameinpuit = document.createElement('input');
-nameinpuit.type = 'text';
-nameinpuit.placeholder = 'Enter project name here...';
-nameinpuit.classList.add('form-control');
-inputcontainer.appendChild(nameinpuit);
+export const nameinput = document.createElement('input');
+nameinput.type = 'text';
+nameinput.placeholder = 'Enter project name here...';
+nameinput.classList.add('form-control');
+inputcontainer.appendChild(nameinput);
 
 export const newProjectButton = document.createElement('buttom');
 newProjectButton.classList.add('btn', 'btn-dark', 'my-2', 'p-1', 'float-end');

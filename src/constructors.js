@@ -8,37 +8,43 @@ export function ToDo(id, title, description, dueDate, priority, notes, checklist
   this.checklist = checklist;
 }
 
-export function Alist(id, name) {
+function TodoList(id, name) {
   this.id = id;
   this.name = name;
   this.list = [];
-  this.add = function (title, description, dueDate, priority, notes, checklist) {
-    this.list.push(new ToDo(this.list.length, title, description, dueDate, priority, notes, checklist));
-  };
-  this.delete = function (index) {
-    this.list.splice(index, 1);
-  };
 }
 
 export function ProjectList() {
   this.list = [];
   this.load = function () {
     this.list = JSON.parse(localStorage.getItem('TODO'));
+    if(this.list === null){
+      this.list = [];
+    }
   };
   this.save = function () {
     localStorage.setItem('TODO', JSON.stringify(this.list));
   };
   this.new = function (name) {
-    this.list.push(new Alist(this.list.length, name));
+    console.log(this.list.length);
+    this.list.push(new TodoList(this.list.length, name));
   };
   this.delete = function (index) {
-    console.log(index);
     this.list.splice(index, 1);
+    this.save();
+    window.location.reload();
+  };
+  this.newTodo = function (index, title, description, dueDate, priority, notes, checklist) {
+    let newTodo = new ToDo(this.list[index].list.length, title,
+      description, dueDate, priority, notes, checklist);
+    this.list[index].list.push(newTodo);
     this.save();
     window.location.reload();
   };
 }
 
+//localStorage.clear();
 const TodoProjects = new ProjectList();
+TodoProjects.load();
 
 export default TodoProjects;
