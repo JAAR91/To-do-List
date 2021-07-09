@@ -26,13 +26,15 @@ export function ProjectList() {
     this.list = JSON.parse(localStorage.getItem('TODO'));
   };
   this.save = function () {
-    console.log(this.list);
     localStorage.setItem('TODO', JSON.stringify(this.list));
   };
   this.new = function (name) {
     this.list.push(new Alist(this.list.length, name));
   };
   this.delete = function (index) {
+    console.log(index);
     this.list.splice(index, 1);
+    this.save();
+    window.location.reload();
   };
 }

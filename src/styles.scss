@@ -67,7 +67,7 @@
 .leftmenu-links{
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
-    padding: 5px;
+    color: white;
 }
 
 .menuContainer {
@@ -114,4 +114,24 @@
     p {
         color: black;
     };
+}
+
+.delete-projecct-btn:hover{
+    background-image: url('https://image.flaticon.com/icons/png/512/1215/1215092.png');
+    background-size: 18px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(44, 223, 255);
+    p {
+        display: none;
+    }
+}
+
+.delete-projecct-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(61, 150, 161);
+    text-decoration: none;
 }

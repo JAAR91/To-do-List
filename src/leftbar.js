@@ -1,20 +1,21 @@
 import {mainContainer} from './topnavbar';
-//const mainContainer = document.getElementById('container');
 
 export const menuContainer = document.createElement('div');
-menuContainer.classList.add('d-flex', 'flex-column', 'menuContainer', 'menuopen');
+menuContainer.classList.add('d-flex', 'flex-column', 'menuContainer');
 mainContainer.appendChild(menuContainer);
 
 const todayLink = document.createElement('a');
-todayLink.classList.add('link-light', 'text-decoration-none', 'leftmenu-links', 'p-2', 'active-link');
+todayLink.classList.add('text-decoration-none', 'leftmenu-links', 'p-2', 'active-link');
 todayLink.href = '#';
+todayLink.id = 'linkmenu1';
 todayLink.innerHTML += '<img class="m-2" src="https://image.flaticon.com/icons/png/512/1134/1134921.png" style="width:20px;">Today';
 menuContainer.appendChild(todayLink);
 
 const upcomingLink = document.createElement('a');
-upcomingLink.classList.add('link-light', 'text-decoration-none', 'leftmenu-links', 'p-2');
+upcomingLink.classList.add('text-decoration-none', 'leftmenu-links', 'p-2');
 upcomingLink.href = '#';
 upcomingLink.innerHTML += '<img class="m-2" src="https://image.flaticon.com/icons/png/512/1247/1247409.png" style="width:20px;">Upcoming';
+upcomingLink.id = 'linkmenu2';
 menuContainer.appendChild(upcomingLink);
 
 const projectsContainer = document.createElement('div');
@@ -30,28 +31,34 @@ projectsContainer.appendChild(ProjectsLink);
 export const addProjects = document.createElement('buttom');
 addProjects.classList.add('btn', 'btn-outline-light', 'ms-5', 'py-0');
 addProjects.textContent = '+';
-addProjects.data
+addProjects.id = 'addbuttom';
 projectsContainer.appendChild(addProjects);
 
 export const leftbarprojectList = document.createElement('div');
 leftbarprojectList.classList.add('d-flex', 'flex-column', 'p-0', 'ms-3');
 projectsContainer.appendChild(leftbarprojectList);
 
-export default function printProjectlist(projects) {
-  for (const i in projects) {
+export default function printProjectlist(ProjectList) {
+  let idmenu = 2;
+  for (const i in ProjectList.list) {
+    idmenu++;
+
     const menuprojectLinks = document.createElement('a');
-    menuprojectLinks.classList.add('text-decoration-none', 'link-light', 'leftmenu-links', 'd-flex', 'justify-content-between', 'my-1', 'py-3');
+    menuprojectLinks.classList.add('text-decoration-none',
+    'leftmenu-links', 'd-flex', 'justify-content-between',
+    'my-1', 'p-2');
     menuprojectLinks.href = '#';
+    menuprojectLinks.id = 'linkmenu' + idmenu;
+    menuprojectLinks.textContent = ProjectList.list[i].name;
     leftbarprojectList.appendChild(menuprojectLinks);
 
-    const projectbutton = document.createElement('p');
-    projectbutton.classList.add('link-light', 'mx-3', 'my-0');
-    projectbutton.textContent = projects[i].name;
-    menuprojectLinks.appendChild(projectbutton);
-
-    const projectbadge = document.createElement('span');
-    projectbadge.classList.add('badge', 'bg-warning', 'rounded-pill', 'text-dark', 'my-0', 'mx-3', 'px-2', 'py-auto');
-    projectbadge.textContent = projects[i].list.length;
+    const projectbadge = document.createElement('buttom');
+    projectbadge.classList.add('text-dark', 'my-0', 'mx-3', 'px-2', 'py-auto',
+    'delete-projecct-btn');
+    projectbadge.id = i;
+    projectbadge.innerHTML = `<p class="p-0 m-0">${ProjectList.list[i].list.length}</p>`;
     menuprojectLinks.append(projectbadge);
   }
+  return idmenu;
 }
+
