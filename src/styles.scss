@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(254, 248, 255);
+}
+
 .leftmenu-links:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
@@ -134,4 +138,41 @@
     border-radius: 50%;
     background-color: rgb(61, 150, 161);
     text-decoration: none;
+}
+
+.TodosContainer {
+    margin-top: 57px;
+    //height: 500px;
+    width: 75%;
+    //border: 1px solid red;
+    background-color: rgb(255, 255, 255);
+}
+
+.todoscondefault {
+    animation: todoscondefault 0.25s linear forwards ;
+}
+
+@keyframes todoscondefault {
+    to {margin-left: 300px;}
+}
+
+.todosconcenter {
+    animation: todosconcenter 0.25s linear forwards;
+}
+
+@keyframes todosconcenter {
+    from{margin-left: 300px;}
+    to {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.mar-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.notodosfound {
+    width: 400px;
 }

@@ -38,3 +38,7 @@ export function ProjectList() {
     window.location.reload();
   };
 }
+
+const TodoProjects = new ProjectList();
+
+export default TodoProjects;

@@ -1,3 +1,7 @@
+body {
+  background-color: #fef8ff;
+}
+
 .leftmenu-links:hover {
   background-color: white;
   color: black;
@@ -203,5 +207,62 @@
   border-radius: 50%;
   background-color: #3d96a1;
   text-decoration: none;
+}
+
+.TodosContainer {
+  margin-top: 57px;
+  width: 75%;
+  background-color: white;
+}
+
+.todoscondefault {
+  -webkit-animation: todoscondefault 0.25s linear forwards;
+          animation: todoscondefault 0.25s linear forwards;
+}
+
+@-webkit-keyframes todoscondefault {
+  to {
+    margin-left: 300px;
+  }
+}
+
+@keyframes todoscondefault {
+  to {
+    margin-left: 300px;
+  }
+}
+
+.todosconcenter {
+  -webkit-animation: todosconcenter 0.25s linear forwards;
+          animation: todosconcenter 0.25s linear forwards;
+}
+
+@-webkit-keyframes todosconcenter {
+  from {
+    margin-left: 300px;
+  }
+  to {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@keyframes todosconcenter {
+  from {
+    margin-left: 300px;
+  }
+  to {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.mar-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notodosfound {
+  width: 400px;
 }
 /*# sourceMappingURL=styles.css.map */

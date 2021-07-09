@@ -1,23 +1,29 @@
+import TodoProjects from './constructors.js';
 import menuButtom from './topnavbar.js';
 import printProjectlist,{
-  menuContainer, ProjectsLink, leftbarprojectList, addProjects, projectbadge
+  menuContainer, addProjects, TodosContainer
 } from './leftbar.js';
 import formContainer,{newProjectButton, nameinpuit} from './newprojectform.js';
+import todoToday from './todayTodo.js'
 import './styles.css';
-import { ProjectList } from './constructors.js';
 
-const TodoProjects = new ProjectList();
 TodoProjects.load();
 
 menuButtom.onclick = () => {
   if (!menuContainer.classList.contains('menuopen') && !menuContainer.classList.contains('menuclose')) {
     menuContainer.classList.add('menuclose');
+    TodosContainer.classList.remove('todoscondefault');
+    TodosContainer.classList.add('todosconcenter');
   } else if(menuContainer.classList.contains('menuopen')) {
     menuContainer.classList.remove('menuopen');
+    TodosContainer.classList.remove('todoscondefault');
+    TodosContainer.classList.add('todosconcenter');
     menuContainer.classList.add('menuclose');
   } else {
     menuContainer.classList.add('menuopen');
     menuContainer.classList.remove('menuclose');
+    TodosContainer.classList.remove('todosconcenter');
+    TodosContainer.classList.add('todoscondefault');
   }
 };
 
@@ -58,3 +64,4 @@ function linkselect(evt) {
 }
 
 menuContainer.addEventListener('click', linkselect);
+

@@ -24,7 +24,6 @@ menuContainer.appendChild(projectsContainer);
 
 export const ProjectsLink = document.createElement('a');
 ProjectsLink.classList.add('text-decoration-none', 'link-dark');
-ProjectsLink.href = '#';
 ProjectsLink.innerHTML = '<img class="mx-3" src="https://image.flaticon.com/icons/png/512/43/43478.png" style="width:14px; transform: rotate(90deg);"> Projects';
 projectsContainer.appendChild(ProjectsLink);
 
@@ -61,4 +60,8 @@ export default function printProjectlist(ProjectList) {
   }
   return idmenu;
 }
+
+export const TodosContainer = document.createElement('div');
+TodosContainer.classList.add('TodosContainer', 'todoscondefault', 'p-3');
+mainContainer.appendChild(TodosContainer);
 
