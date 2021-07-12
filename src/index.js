@@ -4,10 +4,11 @@ import printProjectlist, {
   menuContainer, addProjects, TodosContainer,
 } from './leftbar.js';
 import formContainer, { newProjectButton, nameinput } from './newprojectform.js';
-import todoToday from './todayTodo.js';
+import todayTodo from './todayTodo.js';
 import newTodoformContainer, {
   newTodoBtn, titleinput, descriptionInp, dateInp, prioprityInp, notesInp, projecInp, checklistInp,
 } from './createTodo.js';
+import upcomingTodo from './Upcoming.js'
 import './styles.css';
 
 menuButtom.onclick = () => {
@@ -55,17 +56,37 @@ newProjectButton.onclick = () => {
 newTodoBtn.onclick = () => {
   TodoProjects.newTodo(projecInp.value, titleinput.value,
     descriptionInp.value, dateInp.value, prioprityInp.value,
-    notesInp.value, checklistInp.value);
+    notesInp.value, checklistInp.checked);
 };
+
+function showTodaytodos(){
+  todayTodo.classList.remove('d-none');
+  upcomingTodo.classList.add('d-none');
+}
+
+function showUpcomingTodos (){
+  upcomingTodo.classList.remove('d-none');
+  todayTodo.classList.add('d-none');
+}
 
 function linkselect(evt) {
   if (evt.target.localName === 'a') {
-    console.log(evt.target.textContent);
     menuklinkclick(evt.target);
   }
   if (evt.target.localName === 'buttom' && evt.target.id !== 'addbuttom') {
     TodoProjects.delete(evt.target.id);
   }
+
+  switch(evt.target.textContent) {
+    case 'Today':
+      showTodaytodos();
+      break;
+    case 'Upcoming':
+      showUpcomingTodos();
+      break;
+  }
 }
 
 menuContainer.addEventListener('click', linkselect);
+
+//console.log(TodoProjects);

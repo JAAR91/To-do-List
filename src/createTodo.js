@@ -92,7 +92,6 @@ notelabel.textContent = 'Notes:';
 inputcontainer.appendChild(notelabel);
 
 export const notesInp = document.createElement('textarea');
-//notesInp.type = 'text';
 notesInp.placeholder = 'Enter notes here...';
 notesInp.classList.add('form-control', 'my-1');
 inputcontainer.appendChild(notesInp);
