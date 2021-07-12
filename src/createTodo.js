@@ -1,5 +1,5 @@
 import TodoProjects from './constructors.js';
-import {mainContainer} from './topnavbar';
+import { mainContainer } from './topnavbar';
 
 export const addTodo = document.createElement('a');
 addTodo.classList.add('text-decoration-none', 'link-info');
@@ -12,12 +12,12 @@ addTodobuttom.textContent = '+ Add Task';
 addTodobuttom.href = '#';
 
 const newTodoformContainer = document.createElement('div');
-newTodoformContainer.classList.add('addnewprojectform','form-hidden');
+newTodoformContainer.classList.add('addnewprojectform', 'form-hidden');
 mainContainer.appendChild(newTodoformContainer);
 
 function createTodo() {
-    newTodoformContainer.classList.remove('form-hidden');
-    newTodoformContainer.classList.add('form-shown');
+  newTodoformContainer.classList.remove('form-hidden');
+  newTodoformContainer.classList.add('form-shown');
 }
 
 addTodo.addEventListener('click', createTodo);
@@ -25,7 +25,7 @@ addTodobuttom.addEventListener('click', createTodo);
 
 const form = document.createElement('div');
 form.classList.add('add-todo-form', 'position-absolute', 'top-50',
-'start-50','translate-middle', 'rounded-3');
+  'start-50', 'translate-middle', 'rounded-3');
 newTodoformContainer.appendChild(form);
 
 const formtitle = document.createElement('p');
@@ -38,8 +38,8 @@ addformclosebutton.classList.add('btn', 'btn-outline-light', 'float-end', 'm-0',
 addformclosebutton.textContent = 'X';
 
 addformclosebutton.onclick = () => {
-    newTodoformContainer.classList.add('form-hidden');
-    newTodoformContainer.classList.remove('form-shown');
+  newTodoformContainer.classList.add('form-hidden');
+  newTodoformContainer.classList.remove('form-shown');
 };
 
 formtitle.appendChild(addformclosebutton);
@@ -62,8 +62,7 @@ const deslabel = document.createElement('label');
 deslabel.textContent = 'Description:';
 inputcontainer.appendChild(deslabel);
 
-export const descriptionInp = document.createElement('input');
-descriptionInp.type = 'text';
+export const descriptionInp = document.createElement('textarea');
 descriptionInp.placeholder = 'Enter description here...';
 descriptionInp.classList.add('form-control', 'my-1');
 inputcontainer.appendChild(descriptionInp);
@@ -73,7 +72,7 @@ datelabel.textContent = 'Date:';
 inputcontainer.appendChild(datelabel);
 
 export const dateInp = document.createElement('input');
-dateInp.type = 'datetime-local';
+dateInp.type = 'date';
 dateInp.classList.add('form-control', 'my-1');
 inputcontainer.appendChild(dateInp);
 
@@ -92,8 +91,8 @@ const notelabel = document.createElement('label');
 notelabel.textContent = 'Notes:';
 inputcontainer.appendChild(notelabel);
 
-export const notesInp = document.createElement('input');
-notesInp.type = 'text';
+export const notesInp = document.createElement('textarea');
+//notesInp.type = 'text';
 notesInp.placeholder = 'Enter notes here...';
 notesInp.classList.add('form-control', 'my-1');
 inputcontainer.appendChild(notesInp);
@@ -104,23 +103,23 @@ inputcontainer.appendChild(projectlabel);
 
 export const projecInp = document.createElement('select');
 projecInp.classList.add('form-select', 'my-1');
-for(let i in TodoProjects.list){
-    projecInp.innerHTML +=`<option value="${i}">
+for (const i in TodoProjects.list) {
+  projecInp.innerHTML += `<option value="${i}">
     ${TodoProjects.list[i].name}</option>`;
 }
 inputcontainer.appendChild(projecInp);
 
 const checkcontainer = document.createElement('div');
-checkcontainer.classList.add('form-check', 'form-switch')
+checkcontainer.classList.add('form-check', 'form-switch');
 inputcontainer.appendChild(checkcontainer);
 
 export const checklistInp = document.createElement('input');
 checklistInp.type = 'checkbox';
-checklistInp.classList.add( 'my-1', 'form-check-input');
+checklistInp.classList.add('my-1', 'form-check-input');
 checkcontainer.appendChild(checklistInp);
 
 const checklabel = document.createElement('p');
-checklabel.classList.add('m-0')
+checklabel.classList.add('m-0');
 checklabel.textContent = 'Done?';
 checklabel.style.width = '50px';
 checkcontainer.appendChild(checklabel);

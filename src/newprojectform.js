@@ -1,11 +1,11 @@
-import {mainContainer} from './topnavbar';
+import { mainContainer } from './topnavbar';
 
 const formContainer = document.createElement('div');
 formContainer.classList.add('addnewprojectform', 'form-hidden');
 mainContainer.appendChild(formContainer);
 
 const form = document.createElement('div');
-form.classList.add('add-form', 'position-absolute', 'top-50', 'start-50','translate-middle', 'rounded-3');
+form.classList.add('add-form', 'position-absolute', 'top-50', 'start-50', 'translate-middle', 'rounded-3');
 
 formContainer.appendChild(form);
 
@@ -18,8 +18,8 @@ const formclosebutton = document.createElement('buttom');
 formclosebutton.classList.add('btn', 'btn-outline-light', 'float-end', 'm-0', 'py-0');
 formclosebutton.textContent = 'X';
 formclosebutton.onclick = () => {
-    formContainer.classList.add('form-hidden');
-    formContainer.classList.remove('form-shown');
+  formContainer.classList.add('form-hidden');
+  formContainer.classList.remove('form-shown');
 };
 formtitle.appendChild(formclosebutton);
 
