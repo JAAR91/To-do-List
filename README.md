@@ -1,4 +1,4 @@
-# JS Restaurant Page
+# JS TO-DO List
 
 In this project, we build a task pae project and I made use of the following:
 
@@ -7,7 +7,7 @@ In this project, we build a task pae project and I made use of the following:
 - Use of JavaScript functions and loops
 
 ## Live Server
-[Click Here](https://jaar91.github.io/RESTAURANT-PAGE/)
+[Click Here](https://jaar91.github.io/To-do-List/)
 
 ## Built With
 
@@ -49,7 +49,7 @@ $ npm start
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/JAAR91/js-library/issues).
+Feel free to check the [issues page](https://github.com/JAAR91/To-do-List/issues).
 
 ## Show your support
 
