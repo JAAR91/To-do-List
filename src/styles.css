@@ -2,39 +2,12 @@ body {
   background-color: #fef8ff;
 }
 
-.leftmenu-links:hover {
-  background-color: white;
-  color: black;
-  -webkit-box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
-          box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
-}
-
-.leftmenu-links:hover p {
-  color: black;
-}
-
-@-webkit-keyframes menulinkhover {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes menulinkhover {
-  from {
-  }
-  to {
-  }
-}
-
 .arrow-rotate {
   -webkit-animation: rotatearrow 0.25s linear forwards;
           animation: rotatearrow 0.25s linear forwards;
 }
 
 @-webkit-keyframes rotatearrow {
-  from {
-  }
   to {
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
@@ -42,8 +15,6 @@ body {
 }
 
 @keyframes rotatearrow {
-  from {
-  }
   to {
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
@@ -188,17 +159,15 @@ body {
   color: black;
 }
 
-.delete-projecct-btn:hover {
-  background-image: url("https://image.flaticon.com/icons/png/512/1215/1215092.png");
-  background-size: 18px;
-  background-position: center;
-  background-repeat: no-repeat;
+.leftmenu-links:hover {
   background-color: white;
-  border: 1px solid #2cdfff;
+  color: black;
+  -webkit-box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
+          box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
 }
 
-.delete-projecct-btn:hover p {
-  display: none;
+.leftmenu-links:hover p {
+  color: black;
 }
 
 .delete-projecct-btn {
@@ -211,6 +180,19 @@ body {
   background-color: #3d96a1;
   text-decoration: none;
   text-align: center;
+}
+
+.delete-projecct-btn:hover {
+  background-image: url("https://image.flaticon.com/icons/png/512/1215/1215092.png");
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  border: 1px solid #2cdfff;
+}
+
+.delete-projecct-btn:hover p {
+  display: none;
 }
 
 .TodosContainer {

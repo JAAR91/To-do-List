@@ -1,4 +1,4 @@
-import { mainContainer } from './topnavbar';
+import { mainContainer } from './topnavbar.js';
 
 export const menuContainer = document.createElement('div');
 menuContainer.classList.add('d-flex', 'flex-column', 'menuContainer');
@@ -39,8 +39,8 @@ projectsContainer.appendChild(leftbarprojectList);
 
 export default function printProjectlist(ProjectList) {
   let idmenu = 2;
-  for (const i in ProjectList.list) {
-    idmenu++;
+  for (let i = 0; i < ProjectList.list.length; i += 1) {
+    idmenu += 1;
 
     const menuprojectLinkscontainer = document.createElement('div');
     menuprojectLinkscontainer.classList.add('position-relative');

@@ -16,44 +16,43 @@ function TodoList(id, name) {
 
 export function ProjectList() {
   this.list = [];
-  this.load = function () {
+  this.load = () => {
     this.list = JSON.parse(localStorage.getItem('TODO'));
     if (this.list === null) {
       this.list = [];
     }
   };
-  this.save = function () {
+  this.save = () => {
     localStorage.setItem('TODO', JSON.stringify(this.list));
-    let newtes = JSON.parse(localStorage.getItem('TODO'));
   };
-  this.new = function (name) {
+  this.new = (name) => {
     this.list.push(new TodoList(this.list.length, name));
     window.location.reload();
   };
-  this.delete = function (index) {
+  this.delete = (index) => {
     this.list.splice(index, 1);
     this.save();
     window.location.reload();
   };
-  this.newTodo = function (index, title, description, dueDate, priority, notes, checklist) {
-     const newTodo = new ToDo(this.list[index].list.length, title,
-       description, dueDate, priority, notes, checklist);
-     this.list[index].list.push(newTodo);
-     this.save();
-     window.location.reload();
-  };
-  this.deleteTodo = function (indexa, indexb){
-    this.list[indexa].list.splice(indexb,1);
+  this.newTodo = (index, title, description, dueDate, priority, notes, checklist) => {
+    const newTodo = new ToDo(this.list[index].list.length, title,
+      description, dueDate, priority, notes, checklist);
+    this.list[index].list.push(newTodo);
     this.save();
     window.location.reload();
   };
-  this.updateTodo = function (i,j,value) {
+  this.deleteTodo = (indexa, indexb) => {
+    this.list[indexa].list.splice(indexb, 1);
+    this.save();
+    window.location.reload();
+  };
+  this.updateTodo = (i, j, value) => {
     this.list[i].list[j].checklist = value;
     this.save();
   };
 }
 
- //localStorage.clear();
+// localStorage.clear();
 const TodoProjects = new ProjectList();
 TodoProjects.load();
 

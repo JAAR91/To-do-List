@@ -1,8 +1,10 @@
-import { format, compareAsc, isToday, parseISO, parse } from 'date-fns';
+import {
+  format, isToday, parseISO,
+} from 'date-fns';
 import TodoProjects from './constructors.js';
 import { TodosContainer } from './leftbar.js';
-import printEachTodo from './printTodos.js'
-import {addTodolink} from './createTodo.js'
+import printEachTodo from './printTodos.js';
+import { addTodolink } from './createTodo.js';
 
 const todayTodo = document.createElement('div');
 todayTodo.classList.add('d-flex', 'flex-column', 'align-items-center');
@@ -21,16 +23,16 @@ function printTodos() {
   let totalTo = 0;
   const printTodoContainer = document.createElement('div');
   printTodoContainer.classList.add('container-fluid', 'p-0', 'd-flex', 'my-2');
-  for(let i in TodoProjects.list){
-    for(let j in TodoProjects.list[i].list){
-      if (isToday(parseISO(TodoProjects.list[i].list[j].dueDate))){
-        totalTo++;
+  for (let i = 0; i < TodoProjects.list.length; i += 1) {
+    for (let j = 0; j < TodoProjects.list[i].list.lenght; j += 1) {
+      if (isToday(parseISO(TodoProjects.list[i].list[j].dueDate))) {
+        totalTo += 1;
         printTodoContainer.appendChild(printEachTodo(TodoProjects.list[i].list[j], i, j));
       }
     }
   }
   todayTodo.appendChild(printTodoContainer);
-  if(totalTo ===0){
+  if (totalTo === 0) {
     const notodosfound = new Image();
     notodosfound.classList.add('notodosfound');
     notodosfound.src = 'https://imgc.artprintimages.com/img/print/nothing-yet-sir-but-we-have-found-elvis-new-yorker-cartoon_u-l-pgqixi0.jpg';

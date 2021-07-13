@@ -5,11 +5,12 @@ import printProjectlist, {
 } from './leftbar.js';
 import formContainer, { newProjectButton, nameinput } from './newprojectform.js';
 import todayTodo from './todayTodo.js';
-import newTodoformContainer, {
-  newTodoBtn, titleinput, descriptionInp, dateInp, prioprityInp, notesInp, projecInp } from './createTodo.js';
-import upcomingTodo from './Upcoming.js'
+import {
+  newTodoBtn, titleinput, descriptionInp, dateInp, prioprityInp, notesInp, projecInp,
+} from './createTodo.js';
+import upcomingTodo from './Upcoming.js';
 import './styles.css';
-import projectTodoPrint, {projectTodo} from './projecTodoPrint.js'
+import projectTodoPrint, { projectTodo } from './projecTodoPrint.js';
 
 menuButtom.onclick = () => {
   if (!menuContainer.classList.contains('menuopen') && !menuContainer.classList.contains('menuclose')) {
@@ -29,10 +30,32 @@ menuButtom.onclick = () => {
   }
 };
 
+function showTodaytodos() {
+  todayTodo.classList.remove('d-none');
+  upcomingTodo.classList.add('d-none');
+  projectTodo.classList.add('d-none');
+}
+function showUpcomingTodos() {
+  upcomingTodo.classList.remove('d-none');
+  todayTodo.classList.add('d-none');
+  projectTodo.classList.add('d-none');
+}
+
 const menulinkstotal = printProjectlist(TodoProjects);
 
+function printprojectsTodospage(projectname) {
+  for (let i = 0; i < TodoProjects.list.length; i += 1) {
+    if (TodoProjects.list[i].name === projectname) {
+      projectTodoPrint(projectname, TodoProjects.list[i].list, i);
+    }
+  }
+  upcomingTodo.classList.add('d-none');
+  todayTodo.classList.add('d-none');
+  projectTodo.classList.remove('d-none');
+}
+
 function menuklinkclick(currentbutton) {
-  for (let i = 1; i <= menulinkstotal; i++) {
+  for (let i = 1; i <= menulinkstotal; i += 1) {
     const abutton = document.getElementById(`linkmenu${i}`);
     if (abutton.id === currentbutton.id) {
       abutton.classList.add('active-link');
@@ -41,7 +64,7 @@ function menuklinkclick(currentbutton) {
     }
   }
 
-  switch(currentbutton.textContent) {
+  switch (currentbutton.textContent) {
     case 'Today':
       showTodaytodos();
       break;
@@ -51,7 +74,6 @@ function menuklinkclick(currentbutton) {
     default:
       printprojectsTodospage(currentbutton.textContent);
   }
-
 }
 
 addProjects.onclick = () => {
@@ -71,29 +93,6 @@ newTodoBtn.onclick = () => {
     notesInp.value, false);
 };
 
-function showTodaytodos(){
-  todayTodo.classList.remove('d-none');
-  upcomingTodo.classList.add('d-none');
-  projectTodo.classList.add('d-none');
-}
-
-function showUpcomingTodos (){
-  upcomingTodo.classList.remove('d-none');
-  todayTodo.classList.add('d-none');
-  projectTodo.classList.add('d-none');
-}
-
-function printprojectsTodospage(projectname){
-  for(let i in TodoProjects.list){
-    if (TodoProjects.list[i].name === projectname){
-      projectTodoPrint(projectname, TodoProjects.list[i].list, i);
-    }
-  }
-  upcomingTodo.classList.add('d-none');
-  todayTodo.classList.add('d-none');
-  projectTodo.classList.remove('d-none');
-}
-
 function linkselect(evt) {
   if (evt.target.localName === 'a') {
     menuklinkclick(evt.target);
@@ -105,4 +104,4 @@ function linkselect(evt) {
 
 menuContainer.addEventListener('click', linkselect);
 
-//console.log(TodoProjects);
+// console.log(TodoProjects);

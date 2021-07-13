@@ -1,4 +1,4 @@
-import { mainContainer } from './topnavbar';
+import { mainContainer } from './topnavbar.js';
 
 const formContainer = document.createElement('div');
 formContainer.classList.add('addnewprojectform', 'form-hidden');
