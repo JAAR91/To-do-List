@@ -4,20 +4,20 @@ body {
 
 .arrow-rotate {
   -webkit-animation: rotatearrow 0.25s linear forwards;
-          animation: rotatearrow 0.25s linear forwards;
+  animation: rotatearrow 0.25s linear forwards;
 }
 
 @-webkit-keyframes rotatearrow {
   to {
     -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
   }
 }
 
 @keyframes rotatearrow {
   to {
     -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
   }
 }
 
@@ -26,6 +26,7 @@ body {
     display: block;
     left: -300px;
   }
+
   to {
     left: 0;
   }
@@ -36,6 +37,7 @@ body {
     display: block;
     left: -300px;
   }
+
   to {
     left: 0;
   }
@@ -45,6 +47,7 @@ body {
   from {
     left: 0;
   }
+
   to {
     left: -300px;
     display: none;
@@ -55,6 +58,7 @@ body {
   from {
     left: 0;
   }
+
   to {
     left: -300px;
     display: none;
@@ -64,46 +68,48 @@ body {
 @-webkit-keyframes rotateback {
   from {
     -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
   }
+
   to {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 
 @keyframes rotateback {
   from {
     -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
   }
+
   to {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 
 .arrow-rotate-back {
   -webkit-animation: rotateback 0.25s linear forwards;
-          animation: rotateback 0.25s linear forwards;
+  animation: rotateback 0.25s linear forwards;
 }
 
 .menuopen {
   -webkit-animation-name: leftmenuopen;
-          animation-name: leftmenuopen;
+  animation-name: leftmenuopen;
   -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .menuclose {
   -webkit-animation-name: leftmenuclose;
-          animation-name: leftmenuclose;
+  animation-name: leftmenuclose;
   -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .leftmenu-links {
@@ -152,7 +158,7 @@ body {
   background-color: white;
   color: black;
   -webkit-box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
-          box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
+  box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
 }
 
 .active-link p {
@@ -163,7 +169,7 @@ body {
   background-color: white;
   color: black;
   -webkit-box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
-          box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
+  box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
 }
 
 .leftmenu-links:hover p {
@@ -203,7 +209,7 @@ body {
 
 .todoscondefault {
   -webkit-animation: todoscondefault 0.25s linear forwards;
-          animation: todoscondefault 0.25s linear forwards;
+  animation: todoscondefault 0.25s linear forwards;
 }
 
 @-webkit-keyframes todoscondefault {
@@ -220,13 +226,14 @@ body {
 
 .todosconcenter {
   -webkit-animation: todosconcenter 0.25s linear forwards;
-          animation: todosconcenter 0.25s linear forwards;
+  animation: todosconcenter 0.25s linear forwards;
 }
 
 @-webkit-keyframes todosconcenter {
   from {
     margin-left: 300px;
   }
+
   to {
     margin-left: auto;
     margin-right: auto;
@@ -237,6 +244,7 @@ body {
   from {
     margin-left: 300px;
   }
+
   to {
     margin-left: auto;
     margin-right: auto;
@@ -273,4 +281,3 @@ body {
   background-color: #ff8484;
   color: white;
 }
-/*# sourceMappingURL=styles.css.map */
