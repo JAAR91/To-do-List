@@ -42,7 +42,9 @@ export default function printProjectlist(ProjectList) {
   for (const i in ProjectList.list) {
     idmenu++;
 
-
+    const menuprojectLinkscontainer = document.createElement('div');
+    menuprojectLinkscontainer.classList.add('position-relative');
+    leftbarprojectList.appendChild(menuprojectLinkscontainer);
 
     const menuprojectLinks = document.createElement('a');
     menuprojectLinks.classList.add('text-decoration-none',
@@ -51,14 +53,13 @@ export default function printProjectlist(ProjectList) {
     menuprojectLinks.href = '#';
     menuprojectLinks.id = `linkmenu${idmenu}`;
     menuprojectLinks.textContent = ProjectList.list[i].name;
-    leftbarprojectList.appendChild(menuprojectLinks);
+    menuprojectLinkscontainer.appendChild(menuprojectLinks);
 
-    // const projectbadge = document.createElement('buttom');
-    // projectbadge.classList.add('text-dark', 'my-0', 'mx-3', 'px-2', 'py-auto',
-    //   'delete-projecct-btn');
-    // projectbadge.id = i;
-    // projectbadge.innerHTML = `<p class="p-0 m-0">${ProjectList.list[i].list.length}</p>`;
-    // menuprojectLinks.append(projectbadge);
+    const projectbadge = document.createElement('buttom');
+    projectbadge.classList.add('text-dark', 'delete-projecct-btn');
+    projectbadge.id = i;
+    projectbadge.innerHTML = `<p class="p-0 m-0">${ProjectList.list[i].list.length}</p>`;
+    menuprojectLinkscontainer.append(projectbadge);
   }
   return idmenu;
 }

@@ -6,8 +6,7 @@ import printProjectlist, {
 import formContainer, { newProjectButton, nameinput } from './newprojectform.js';
 import todayTodo from './todayTodo.js';
 import newTodoformContainer, {
-  newTodoBtn, titleinput, descriptionInp, dateInp, prioprityInp, notesInp, projecInp, checklistInp,
-} from './createTodo.js';
+  newTodoBtn, titleinput, descriptionInp, dateInp, prioprityInp, notesInp, projecInp } from './createTodo.js';
 import upcomingTodo from './Upcoming.js'
 import './styles.css';
 import projectTodoPrint, {projectTodo} from './projecTodoPrint.js'
@@ -69,7 +68,7 @@ newProjectButton.onclick = () => {
 newTodoBtn.onclick = () => {
   TodoProjects.newTodo(projecInp.value, titleinput.value,
     descriptionInp.value, dateInp.value, prioprityInp.value,
-    notesInp.value, checklistInp.checked);
+    notesInp.value, false);
 };
 
 function showTodaytodos(){

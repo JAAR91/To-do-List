@@ -1,27 +1,23 @@
 import TodoProjects from './constructors.js';
 import { mainContainer } from './topnavbar';
 
-export const addTodo = document.createElement('a');
-addTodo.classList.add('text-decoration-none', 'link-info');
-addTodo.textContent = '+ Add Task';
-addTodo.href = '#';
 
-export const addTodobuttom = document.createElement('buttom');
-addTodobuttom.classList.add('btn', 'text-center', 'btn-info');
-addTodobuttom.textContent = '+ Add Task';
-addTodobuttom.href = '#';
+export function addTodolink() {
+  const addTodo = document.createElement('a');
+  addTodo.classList.add('text-decoration-none', 'link-info');
+  addTodo.textContent = '+ Add Task';
+  addTodo.href = '#';
+  addTodo.onclick = () => {
+    newTodoformContainer.classList.remove('form-hidden');
+    newTodoformContainer.classList.add('form-shown');
+  };
+
+  return addTodo;
+}
 
 const newTodoformContainer = document.createElement('div');
 newTodoformContainer.classList.add('addnewprojectform', 'form-hidden');
 mainContainer.appendChild(newTodoformContainer);
-
-function createTodo() {
-  newTodoformContainer.classList.remove('form-hidden');
-  newTodoformContainer.classList.add('form-shown');
-}
-
-addTodo.addEventListener('click', createTodo);
-addTodobuttom.addEventListener('click', createTodo);
 
 const form = document.createElement('div');
 form.classList.add('add-todo-form', 'position-absolute', 'top-50',
@@ -108,20 +104,20 @@ for (const i in TodoProjects.list) {
 }
 inputcontainer.appendChild(projecInp);
 
-const checkcontainer = document.createElement('div');
-checkcontainer.classList.add('form-check', 'form-switch');
-inputcontainer.appendChild(checkcontainer);
+// const checkcontainer = document.createElement('div');
+// checkcontainer.classList.add('form-check', 'form-switch');
+// inputcontainer.appendChild(checkcontainer);
 
-export const checklistInp = document.createElement('input');
-checklistInp.type = 'checkbox';
-checklistInp.classList.add('my-1', 'form-check-input');
-checkcontainer.appendChild(checklistInp);
+// export const checklistInp = document.createElement('input');
+// checklistInp.type = 'checkbox';
+// checklistInp.classList.add('my-1', 'form-check-input');
+// checkcontainer.appendChild(checklistInp);
 
-const checklabel = document.createElement('p');
-checklabel.classList.add('m-0');
-checklabel.textContent = 'Done?';
-checklabel.style.width = '50px';
-checkcontainer.appendChild(checklabel);
+// const checklabel = document.createElement('p');
+// checklabel.classList.add('m-0');
+// checklabel.textContent = 'Done?';
+// checklabel.style.width = '50px';
+// checkcontainer.appendChild(checklabel);
 
 export const newTodoBtn = document.createElement('buttom');
 newTodoBtn.classList.add('btn', 'btn-success', 'mx-auto');

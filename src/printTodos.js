@@ -2,9 +2,13 @@ import { format, parseISO } from 'date-fns';
 import TodoProjects from './constructors.js';
 
 function printEachTodo(todo, i, j) {
+    const TodoDivContainer = document.createElement('div');
+    TodoDivContainer.classList.add('col-3', 'm-0', 'p-2');
+    
+
     const TodoDiv = document.createElement('div');
-    TodoDiv.classList.add('rounded', 'border','shadow', 'p-3', 'm-1',
-    'bg-body', 'position-relative');
+    TodoDiv.classList.add('rounded', 'border','shadow',
+    'bg-body', 'position-relative', 'p-2', 'h-100');
 
     TodoDiv.innerHTML += `<div class="border-bottom d-flex align-items-center m-0 justify-content-center">
     <p class="fs-3 text-center my-0 mx-1">${todo.title}</p>
@@ -19,6 +23,8 @@ function printEachTodo(todo, i, j) {
     <p class="text-muted m-0">Notes</p>
     <p class="m-0">${todo.notes}</p>
     </div>`;
+
+    TodoDivContainer.appendChild(TodoDiv);
 
     const checkcontainer = document.createElement('div');
     checkcontainer.classList.add('form-check', 'form-switch', 'p-0',
@@ -47,7 +53,7 @@ function printEachTodo(todo, i, j) {
         TodoProjects.deleteTodo(i, j);
     };
     TodoDiv.appendChild(deleteTodo);
-    return TodoDiv;
+    return TodoDivContainer;
 }
 
 export default printEachTodo;

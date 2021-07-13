@@ -202,11 +202,15 @@ body {
 }
 
 .delete-projecct-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
   width: 25px;
   height: 25px;
   border-radius: 50%;
   background-color: #3d96a1;
   text-decoration: none;
+  text-align: center;
 }
 
 .TodosContainer {
