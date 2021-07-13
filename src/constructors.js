@@ -25,24 +25,27 @@ export function ProjectList() {
   this.save = function () {
     localStorage.setItem('TODO', JSON.stringify(this.list));
     let newtes = JSON.parse(localStorage.getItem('TODO'));
-    window.location.reload();
   };
   this.new = function (name) {
     this.list.push(new TodoList(this.list.length, name));
+    window.location.reload();
   };
   this.delete = function (index) {
     this.list.splice(index, 1);
     this.save();
+    window.location.reload();
   };
   this.newTodo = function (index, title, description, dueDate, priority, notes, checklist) {
      const newTodo = new ToDo(this.list[index].list.length, title,
        description, dueDate, priority, notes, checklist);
      this.list[index].list.push(newTodo);
      this.save();
+     window.location.reload();
   };
   this.deleteTodo = function (indexa, indexb){
     this.list[indexa].list.splice(indexb,1);
     this.save();
+    window.location.reload();
   };
   this.updateTodo = function (i,j,value) {
     this.list[i].list[j].checklist = value;

@@ -10,6 +10,7 @@ import newTodoformContainer, {
 } from './createTodo.js';
 import upcomingTodo from './Upcoming.js'
 import './styles.css';
+import projectTodoPrint, {projectTodo} from './projecTodoPrint.js'
 
 menuButtom.onclick = () => {
   if (!menuContainer.classList.contains('menuopen') && !menuContainer.classList.contains('menuclose')) {
@@ -40,6 +41,18 @@ function menuklinkclick(currentbutton) {
       abutton.classList.remove('active-link');
     }
   }
+
+  switch(currentbutton.textContent) {
+    case 'Today':
+      showTodaytodos();
+      break;
+    case 'Upcoming':
+      showUpcomingTodos();
+      break;
+    default:
+      printprojectsTodospage(currentbutton.textContent);
+  }
+
 }
 
 addProjects.onclick = () => {
@@ -62,11 +75,24 @@ newTodoBtn.onclick = () => {
 function showTodaytodos(){
   todayTodo.classList.remove('d-none');
   upcomingTodo.classList.add('d-none');
+  projectTodo.classList.add('d-none');
 }
 
 function showUpcomingTodos (){
   upcomingTodo.classList.remove('d-none');
   todayTodo.classList.add('d-none');
+  projectTodo.classList.add('d-none');
+}
+
+function printprojectsTodospage(projectname){
+  for(let i in TodoProjects.list){
+    if (TodoProjects.list[i].name === projectname){
+      projectTodoPrint(projectname, TodoProjects.list[i].list, i);
+    }
+  }
+  upcomingTodo.classList.add('d-none');
+  todayTodo.classList.add('d-none');
+  projectTodo.classList.remove('d-none');
 }
 
 function linkselect(evt) {
@@ -75,15 +101,6 @@ function linkselect(evt) {
   }
   if (evt.target.localName === 'buttom' && evt.target.id !== 'addbuttom') {
     TodoProjects.delete(evt.target.id);
-  }
-
-  switch(evt.target.textContent) {
-    case 'Today':
-      showTodaytodos();
-      break;
-    case 'Upcoming':
-      showUpcomingTodos();
-      break;
   }
 }
 
