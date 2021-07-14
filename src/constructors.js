@@ -19,7 +19,8 @@ export function ProjectList() {
   this.load = () => {
     this.list = JSON.parse(localStorage.getItem('TODO'));
     if (this.list === null) {
-      this.list = [];
+      this.list = [new TodoList(0, 'Default')];
+      this.save();
     }
   };
   this.save = () => {
@@ -61,8 +62,9 @@ export function ProjectList() {
   };
 }
 
-// localStorage.clear();
+//localStorage.clear();
 const TodoProjects = new ProjectList();
 TodoProjects.load();
+//TodoProjects.new('Default');
 
 export default TodoProjects;

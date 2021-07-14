@@ -1,3 +1,4 @@
 node_modules
 runlinters.sh
 deployment.sh
+commit.sh
