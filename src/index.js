@@ -31,20 +31,21 @@ menuButtom.onclick = () => {
   }
 };
 
-function showTodaytodos() {
+const showTodaytodos = () => {
   todayTodo.classList.remove('d-none');
   upcomingTodo.classList.add('d-none');
   projectTodo.classList.add('d-none');
-}
-function showUpcomingTodos() {
+};
+
+const showUpcomingTodos = () => {
   upcomingTodo.classList.remove('d-none');
   todayTodo.classList.add('d-none');
   projectTodo.classList.add('d-none');
-}
+};
 
 const menulinkstotal = printProjectlist(TodoProjects);
 
-function printprojectsTodospage(projectname) {
+const printprojectsTodospage = (projectname) => {
   for (let i = 0; i < TodoProjects.list.length; i += 1) {
     if (TodoProjects.list[i].name === projectname) {
       projectTodoPrint(projectname, TodoProjects.list[i].list, i);
@@ -53,9 +54,9 @@ function printprojectsTodospage(projectname) {
   upcomingTodo.classList.add('d-none');
   todayTodo.classList.add('d-none');
   projectTodo.classList.remove('d-none');
-}
+};
 
-function menuklinkclick(currentbutton) {
+const menuklinkclick = (currentbutton) => {
   for (let i = 1; i <= menulinkstotal; i += 1) {
     const abutton = document.getElementById(`linkmenu${i}`);
     if (abutton.id === currentbutton.id) {
@@ -75,7 +76,7 @@ function menuklinkclick(currentbutton) {
     default:
       printprojectsTodospage(currentbutton.textContent);
   }
-}
+};
 
 addProjects.onclick = () => {
   formContainer.classList.remove('form-hidden');
@@ -100,13 +101,13 @@ updateTodoBtn.onclick = () => {
     notesInp.value);
 };
 
-function linkselect(evt) {
+const linkselect = (evt) => {
   if (evt.target.localName === 'a') {
     menuklinkclick(evt.target);
   }
   if (evt.target.localName === 'buttom' && evt.target.id !== 'addbuttom') {
     TodoProjects.delete(evt.target.id);
   }
-}
+};
 
 menuContainer.addEventListener('click', linkselect);

@@ -37,7 +37,7 @@ export const leftbarprojectList = document.createElement('div');
 leftbarprojectList.classList.add('d-flex', 'flex-column', 'p-0', 'ms-3');
 projectsContainer.appendChild(leftbarprojectList);
 
-export default function printProjectlist(ProjectList) {
+const printProjectlist = (ProjectList) => {
   let idmenu = 2;
   for (let i = 0; i < ProjectList.list.length; i += 1) {
     idmenu += 1;
@@ -62,8 +62,10 @@ export default function printProjectlist(ProjectList) {
     menuprojectLinkscontainer.append(projectbadge);
   }
   return idmenu;
-}
+};
 
 export const TodosContainer = document.createElement('div');
 TodosContainer.classList.add('TodosContainer', 'todoscondefault', 'p-3');
 mainContainer.appendChild(TodosContainer);
+
+export default printProjectlist;

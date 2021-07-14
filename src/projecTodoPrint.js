@@ -6,7 +6,7 @@ export const projectTodo = document.createElement('div');
 projectTodo.classList.add('d-flex', 'flex-column', 'align-items-center', 'd-none');
 TodosContainer.appendChild(projectTodo);
 
-function projectTodoPrint(projectTitle, projectTodos, i) {
+const projectTodoPrint = (projectTitle, projectTodos, i) => {
   projectTodo.innerHTML = '';
 
   const todayTitle = document.createElement('div');
@@ -33,6 +33,6 @@ function projectTodoPrint(projectTitle, projectTodos, i) {
     notodosfound.src = 'https://imgc.artprintimages.com/img/print/nothing-yet-sir-but-we-have-found-elvis-new-yorker-cartoon_u-l-pgqixi0.jpg';
     projectTodo.appendChild(notodosfound);
   }
-}
+};
 
 export default projectTodoPrint;

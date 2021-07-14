@@ -19,7 +19,7 @@ todayTodo.appendChild(todayTitle);
 
 todayTodo.appendChild(addTodolink());
 
-function printTodos() {
+const printTodos = () => {
   let totalTo = 0;
   const printTodoContainer = document.createElement('div');
   printTodoContainer.classList.add('container-fluid', 'p-0', 'd-flex', 'my-2');
@@ -38,7 +38,7 @@ function printTodos() {
     notodosfound.src = 'https://imgc.artprintimages.com/img/print/nothing-yet-sir-but-we-have-found-elvis-new-yorker-cartoon_u-l-pgqixi0.jpg';
     todayTodo.appendChild(notodosfound);
   }
-}
+};
 
 printTodos();
 

@@ -2,7 +2,7 @@ import { format, parseISO } from 'date-fns';
 import TodoProjects from './constructors.js';
 import { editFillInputs, addbuttonClick } from './createTodo.js';
 
-function printEachTodo(todo, i, j) {
+const printEachTodo = (todo, i, j) => {
   const TodoDivContainer = document.createElement('div');
   TodoDivContainer.classList.add('col-3', 'm-0', 'p-2');
 
@@ -63,6 +63,6 @@ function printEachTodo(todo, i, j) {
   };
 
   return TodoDivContainer;
-}
+};
 
 export default printEachTodo;

@@ -109,7 +109,7 @@ export const indexb = document.createElement('input');
 indexb.type = 'hidden';
 inputcontainer.appendChild(indexb);
 
-export function addbuttonClick() {
+export const addbuttonClick = () => {
   newTodoformContainer.classList.remove('form-hidden');
   newTodoformContainer.classList.add('form-shown');
   newTodoBtn.classList.remove('d-none');
@@ -122,18 +122,18 @@ export function addbuttonClick() {
   prioprityInp.value = '';
   notesInp.value = '';
   projecInp.value = 0;
-}
+};
 
-export function addTodolink() {
+export const addTodolink = () => {
   const addTodo = document.createElement('a');
   addTodo.classList.add('text-decoration-none', 'link-info');
   addTodo.textContent = '+ Add Task';
   addTodo.href = '#';
   addTodo.addEventListener('click', addbuttonClick);
   return addTodo;
-}
+};
 
-export function editFillInputs(title, description, date, priority, notes, project, Todo) {
+export const editFillInputs = (title, description, date, priority, notes, project, Todo) => {
   titleinput.value = title;
   descriptionInp.value = description;
   dateInp.value = date;
@@ -145,6 +145,6 @@ export function editFillInputs(title, description, date, priority, notes, projec
   indexb.value = Todo;
   projectlabel.classList.add('d-none');
   projecInp.classList.add('d-none');
-}
+};
 
 export default newTodoformContainer;
