@@ -1,4 +1,4 @@
-export function ToDo(id, title, description, dueDate, priority, notes, checklist) {
+function ToDo(id, title, description, dueDate, priority, notes, checklist) {
   this.id = id;
   this.title = title;
   this.description = description;
@@ -14,7 +14,7 @@ function TodoList(id, name) {
   this.list = [];
 }
 
-export function ProjectList() {
+function ProjectList() {
   this.list = [];
   this.load = () => {
     this.list = JSON.parse(localStorage.getItem('TODO'));
@@ -51,20 +51,18 @@ export function ProjectList() {
     this.list[i].list[j].checklist = value;
     this.save();
   };
-  this.updateTodoinfo = (i, j, value) => {
-    this.list[i].list[j].title = value[0];
-    this.list[i].list[j].description = value[1];
-    this.list[i].list[j].dueDate = value[2];
-    this.list[i].list[j].priority = value[3];
-    this.list[i].list[j].notes = value[4];
+  this.updateTodoinfo = (i, j, title, description, date, priority, notes) => {
+    this.list[i].list[j].title = title;
+    this.list[i].list[j].description = description;
+    this.list[i].list[j].dueDate = date;
+    this.list[i].list[j].priority = priority;
+    this.list[i].list[j].notes = notes;
     this.save();
     window.location.reload();
   };
 }
 
-//localStorage.clear();
 const TodoProjects = new ProjectList();
 TodoProjects.load();
-//TodoProjects.new('Default');
 
 export default TodoProjects;

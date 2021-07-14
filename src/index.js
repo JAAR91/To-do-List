@@ -7,7 +7,8 @@ import formContainer, { newProjectButton, nameinput } from './newprojectform.js'
 import todayTodo from './todayTodo.js';
 import {
   newTodoBtn, titleinput, descriptionInp, dateInp, prioprityInp, notesInp,
-  projecInp, updateTodoBtn, indexa,indexb } from './createTodo.js';
+  projecInp, updateTodoBtn, indexa, indexb,
+} from './createTodo.js';
 import upcomingTodo from './Upcoming.js';
 import './styles.css';
 import projectTodoPrint, { projectTodo } from './projecTodoPrint.js';
@@ -93,11 +94,10 @@ newTodoBtn.onclick = () => {
     notesInp.value, false);
 };
 
-updateTodoBtn.onclick = () =>{
-
-  TodoProjects.updateTodoinfo(indexa.value, indexb.value,[titleinput.value,
+updateTodoBtn.onclick = () => {
+  TodoProjects.updateTodoinfo(indexa.value, indexb.value, titleinput.value,
     descriptionInp.value, dateInp.value, prioprityInp.value,
-    notesInp.value]);
+    notesInp.value);
 };
 
 function linkselect(evt) {

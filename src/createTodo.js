@@ -109,13 +109,13 @@ export const indexb = document.createElement('input');
 indexb.type = 'hidden';
 inputcontainer.appendChild(indexb);
 
-export function addbuttonClick(){
+export function addbuttonClick() {
   newTodoformContainer.classList.remove('form-hidden');
   newTodoformContainer.classList.add('form-shown');
   newTodoBtn.classList.remove('d-none');
   updateTodoBtn.classList.add('d-none');
-  projectlabel.classList.remove('d-none')
-  projecInp.classList.remove('d-none')
+  projectlabel.classList.remove('d-none');
+  projecInp.classList.remove('d-none');
   titleinput.value = '';
   descriptionInp.value = '';
   dateInp.value = '';
@@ -133,18 +133,18 @@ export function addTodolink() {
   return addTodo;
 }
 
-export function editFillInputs(title, description, date, priority, notes, project, Todo){
+export function editFillInputs(title, description, date, priority, notes, project, Todo) {
   titleinput.value = title;
   descriptionInp.value = description;
   dateInp.value = date;
   prioprityInp.value = priority;
   notesInp.value = notes;
   newTodoBtn.classList.add('d-none');
-  updateTodoBtn.classList.remove('d-none')
+  updateTodoBtn.classList.remove('d-none');
   indexa.value = project;
   indexb.value = Todo;
-  projectlabel.classList.add('d-none')
-  projecInp.classList.add('d-none')
+  projectlabel.classList.add('d-none');
+  projecInp.classList.add('d-none');
 }
 
 export default newTodoformContainer;
