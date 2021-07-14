@@ -1,0 +1,203 @@
+body {
+  background-color: rgb(254, 248, 255);
+}
+
+.arrow-rotate {
+  animation: rotatearrow 0.25s linear forwards;
+}
+
+@keyframes rotatearrow {
+  to { transform: rotate(90deg); }
+}
+
+@keyframes leftmenuopen {
+  from {
+    display: block;
+    left: -300px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes leftmenuclose {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: -300px;
+    display: none;
+  }
+}
+
+@keyframes rotateback {
+  from { transform: rotate(90deg); }
+  to { transform: rotate(0deg); }
+}
+
+.arrow-rotate-back {
+  animation: rotateback 0.25s linear forwards;
+}
+
+.menuopen {
+  animation-name: leftmenuopen;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.menuclose {
+  animation-name: leftmenuclose;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.leftmenu-links {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  color: white;
+}
+
+.menuContainer {
+  height: 95%;
+  width: 300px;
+  top: 56px;
+  left: 0;
+  position: fixed;
+  background-color: rgb(52, 98, 116);
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
+.addnewprojectform {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.308);
+  z-index: 850;
+}
+
+.form-hidden {
+  display: none;
+}
+
+.form-shown {
+  display: block;
+}
+
+.add-form {
+  margin: auto;
+  background-color: rgb(247, 247, 247);
+  width: 450px;
+  height: 160px;
+}
+
+.active-link {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
+
+  p {
+    color: black;
+  }
+}
+
+.leftmenu-links:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  box-shadow: -5px 5px 3px 0 rgba(63, 63, 63, 0.651);
+
+  p {
+    color: black;
+  }
+}
+
+.delete-projecct-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgb(61, 150, 161);
+  text-decoration: none;
+  text-align: center;
+}
+
+.delete-projecct-btn:hover {
+  background-image: url('https://image.flaticon.com/icons/png/512/1215/1215092.png');
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(44, 223, 255);
+
+  p {
+    display: none;
+  }
+}
+
+.TodosContainer {
+  margin-top: 57px;
+  width: 75%;
+  background-color: rgb(255, 255, 255);
+}
+
+.todoscondefault {
+  animation: todoscondefault 0.25s linear forwards;
+}
+
+@keyframes todoscondefault {
+  to {
+    margin-left: 300px;
+  }
+}
+
+.todosconcenter {
+  animation: todosconcenter 0.25s linear forwards;
+}
+
+@keyframes todosconcenter {
+  from {
+    margin-left: 300px;
+  }
+
+  to {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.mar-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.notodosfound {
+  width: 400px;
+}
+
+.add-todo-form {
+  width: 350px;
+  background-color: white;
+}
+
+.deleteTodoBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 2px solid rgb(255, 132, 132);
+  color: rgb(255, 132, 132);
+  background-color: rgba(255, 255, 255, 0.014);
+  border-bottom-left-radius: 100%;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.deleteTodoBtn:hover {
+  background-color: rgb(255, 132, 132);
+  color: white;
+}
