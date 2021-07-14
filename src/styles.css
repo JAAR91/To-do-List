@@ -271,13 +271,41 @@ body {
   right: 0;
   border: 2px solid #ff8484;
   color: #ff8484;
-  background-color: rgba(255, 255, 255, 0.014);
-  border-bottom-left-radius: 100%;
-  padding-left: 10px;
-  padding-bottom: 5px;
+  background-color: white;
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
+  width: 30px;
+  height: 30px;
+  background-image: url('./img/deletered.svg');
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center;
 }
 
 .deleteTodoBtn:hover {
   background-color: #ff8484;
-  color: white;
+  background-image: url('./img/deletewhite.svg');
 }
+
+.editTodoButon {
+  position: absolute;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border: 2px solid rgb(41, 186, 223);
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+  background-image: url('./img/editblue.png');
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center;
+}
+
+.editTodoButon:hover {
+  background-color: rgb(41, 186, 223);
+  background-image: url('./img/editwhite.png');
+} 

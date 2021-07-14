@@ -5,19 +5,6 @@ const newTodoformContainer = document.createElement('div');
 newTodoformContainer.classList.add('addnewprojectform', 'form-hidden');
 mainContainer.appendChild(newTodoformContainer);
 
-export function addTodolink() {
-  const addTodo = document.createElement('a');
-  addTodo.classList.add('text-decoration-none', 'link-info');
-  addTodo.textContent = '+ Add Task';
-  addTodo.href = '#';
-  addTodo.onclick = () => {
-    newTodoformContainer.classList.remove('form-hidden');
-    newTodoformContainer.classList.add('form-shown');
-  };
-
-  return addTodo;
-}
-
 const form = document.createElement('div');
 form.classList.add('add-todo-form', 'position-absolute', 'top-50',
   'start-50', 'translate-middle', 'rounded-3');
@@ -101,11 +88,63 @@ for (let i = 0; i < TodoProjects.list.length; i += 1) {
   projecInp.innerHTML += `<option value="${i}">
     ${TodoProjects.list[i].name}</option>`;
 }
+projecInp.value = 1;
 inputcontainer.appendChild(projecInp);
 
-export const newTodoBtn = document.createElement('buttom');
+export const newTodoBtn = document.createElement('button');
 newTodoBtn.classList.add('btn', 'btn-success', 'mx-auto');
 newTodoBtn.textContent = '+ New Task';
 inputcontainer.appendChild(newTodoBtn);
+
+export const updateTodoBtn = document.createElement('button');
+updateTodoBtn.classList.add('btn', 'btn-info', 'mx-auto', 'd-none');
+updateTodoBtn.textContent = 'Update Task';
+inputcontainer.appendChild(updateTodoBtn);
+
+export const indexa = document.createElement('input');
+indexa.type = 'hidden';
+inputcontainer.appendChild(indexa);
+
+export const indexb = document.createElement('input');
+indexb.type = 'hidden';
+inputcontainer.appendChild(indexb);
+
+export function addbuttonClick(){
+  newTodoformContainer.classList.remove('form-hidden');
+  newTodoformContainer.classList.add('form-shown');
+  newTodoBtn.classList.remove('d-none');
+  updateTodoBtn.classList.add('d-none');
+  projectlabel.classList.remove('d-none')
+  projecInp.classList.remove('d-none')
+  titleinput.value = '';
+  descriptionInp.value = '';
+  dateInp.value = '';
+  prioprityInp.value = '';
+  notesInp.value = '';
+  projecInp.value = 0;
+}
+
+export function addTodolink() {
+  const addTodo = document.createElement('a');
+  addTodo.classList.add('text-decoration-none', 'link-info');
+  addTodo.textContent = '+ Add Task';
+  addTodo.href = '#';
+  addTodo.addEventListener('click', addbuttonClick);
+  return addTodo;
+}
+
+export function editFillInputs(title, description, date, priority, notes, project, Todo){
+  titleinput.value = title;
+  descriptionInp.value = description;
+  dateInp.value = date;
+  prioprityInp.value = priority;
+  notesInp.value = notes;
+  newTodoBtn.classList.add('d-none');
+  updateTodoBtn.classList.remove('d-none')
+  indexa.value = project;
+  indexb.value = Todo;
+  projectlabel.classList.add('d-none')
+  projecInp.classList.add('d-none')
+}
 
 export default newTodoformContainer;

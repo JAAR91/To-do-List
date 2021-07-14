@@ -24,7 +24,7 @@ function printTodos() {
   const printTodoContainer = document.createElement('div');
   printTodoContainer.classList.add('container-fluid', 'p-0', 'd-flex', 'my-2');
   for (let i = 0; i < TodoProjects.list.length; i += 1) {
-    for (let j = 0; j < TodoProjects.list[i].list.lenght; j += 1) {
+    for (let j = 0; j < TodoProjects.list[i].list.length; j += 1) {
       if (isToday(parseISO(TodoProjects.list[i].list[j].dueDate))) {
         totalTo += 1;
         printTodoContainer.appendChild(printEachTodo(TodoProjects.list[i].list[j], i, j));

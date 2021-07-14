@@ -50,6 +50,15 @@ export function ProjectList() {
     this.list[i].list[j].checklist = value;
     this.save();
   };
+  this.updateTodoinfo = (i, j, value) => {
+    this.list[i].list[j].title = value[0];
+    this.list[i].list[j].description = value[1];
+    this.list[i].list[j].dueDate = value[2];
+    this.list[i].list[j].priority = value[3];
+    this.list[i].list[j].notes = value[4];
+    this.save();
+    window.location.reload();
+  };
 }
 
 // localStorage.clear();

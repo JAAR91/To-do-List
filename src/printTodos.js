@@ -1,7 +1,9 @@
 import { format, parseISO } from 'date-fns';
 import TodoProjects from './constructors.js';
+import {editFillInputs, addbuttonClick} from './createTodo.js'
 
 function printEachTodo(todo, i, j) {
+  console.log(todo.dueDate);
   const TodoDivContainer = document.createElement('div');
   TodoDivContainer.classList.add('col-3', 'm-0', 'p-2');
 
@@ -10,7 +12,7 @@ function printEachTodo(todo, i, j) {
     'bg-body', 'position-relative', 'p-2', 'h-100');
 
   TodoDiv.innerHTML += `<div class="border-bottom d-flex align-items-center m-0 justify-content-center">
-    <p class="fs-3 text-center my-0 mx-1">${todo.title}</p>
+    <p class="fs-3 text-center my-0 mx-1 mt-4">${todo.title}</p>
     <p class="text-muted my-0 mx-1">(${todo.priority})</p>
     </div>
     <p class="text-muted m-0">Due: ${format(parseISO(todo.dueDate), 'EEE MMM d Y')}</p>
@@ -47,11 +49,20 @@ function printEachTodo(todo, i, j) {
 
   const deleteTodo = document.createElement('button');
   deleteTodo.classList.add('deleteTodoBtn');
-  deleteTodo.textContent = 'X';
   deleteTodo.onclick = () => {
     TodoProjects.deleteTodo(i, j);
   };
   TodoDiv.appendChild(deleteTodo);
+
+  const editButton = document.createElement('button');
+  editButton.classList.add('editTodoButon');
+  TodoDiv.appendChild(editButton);
+
+  editButton.onclick = () => {
+    addbuttonClick();
+    editFillInputs(todo.title, todo.description, todo.dueDate, todo.priority, todo.notes, i, j);
+  };
+
   return TodoDivContainer;
 }
 
