@@ -2,3 +2,7 @@ node_modules
 runlinters.sh
 deployment.sh
 commit.sh
+featureBranch.sh
+jestinstall.sh
+.vscode
+babeldependInstall.sh
